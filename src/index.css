@@ -2,95 +2,108 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Ayurvedic Blockchain Traceability Design System 
+All colors MUST be HSL. Theme palette for herbal supply chain transparency.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Brand Colors - Ayurvedic Nature Theme */
+    --forest-green: 94 66% 20%;        /* #2D5016 - Primary brand */
+    --emerald: 135 44% 55%;            /* #50C878 - Secondary green */
+    --warm-gold: 43 74% 49%;           /* #DAA520 - Traditional wisdom */
+    --deep-saffron: 23 100% 57%;       /* #FF7722 - Herbal accent */
+    --trust-blue: 212 67% 58%;         /* #4A90E2 - Blockchain tech */
+    --earth-brown: 25 55% 31%;         /* #8B4513 - Farming roots */
+    
+    /* Neutral Palette */
+    --charcoal-gray: 180 22% 25%;      /* #2F4F4F - Primary text */
+    --light-gray: 0 0% 96%;            /* #F5F5F5 - Card backgrounds */
+    --pure-white: 0 0% 100%;           /* #FFFFFF - Clean backgrounds */
+    --medium-gray: 195 7% 55%;         /* #7F8C8D - Secondary text */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Semantic Color Mapping */
+    --background: var(--pure-white);
+    --foreground: var(--charcoal-gray);
+    
+    --card: var(--pure-white);
+    --card-foreground: var(--charcoal-gray);
+    
+    --popover: var(--pure-white);
+    --popover-foreground: var(--charcoal-gray);
+    
+    --primary: var(--forest-green);
+    --primary-foreground: var(--pure-white);
+    
+    --secondary: var(--light-gray);
+    --secondary-foreground: var(--charcoal-gray);
+    
+    --muted: var(--light-gray);
+    --muted-foreground: var(--medium-gray);
+    
+    --accent: var(--emerald);
+    --accent-foreground: var(--pure-white);
+    
+    --destructive: var(--deep-saffron);
+    --destructive-foreground: var(--pure-white);
+    
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: var(--forest-green);
+    
+    --radius: 0.75rem;
+    
+    /* Custom Design Tokens */
+    --gradient-nature: linear-gradient(135deg, hsl(var(--forest-green)), hsl(var(--emerald)));
+    --gradient-wisdom: linear-gradient(135deg, hsl(var(--warm-gold)), hsl(var(--deep-saffron)));
+    --gradient-trust: linear-gradient(135deg, hsl(var(--trust-blue)), hsl(var(--emerald)));
+    
+    --shadow-soft: 0 4px 6px -1px hsl(var(--forest-green) / 0.1), 0 2px 4px -1px hsl(var(--forest-green) / 0.06);
+    --shadow-glow: 0 0 0 1px hsl(var(--emerald) / 0.05), 0 10px 25px -5px hsl(var(--forest-green) / 0.1);
+    --shadow-premium: 0 0 0 1px hsl(var(--warm-gold) / 0.2), 0 8px 32px -8px hsl(var(--warm-gold) / 0.3);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Dark theme optimized for Ayurvedic blockchain platform */
+    --background: 94 66% 8%;           /* Darker forest green base */
+    --foreground: var(--pure-white);
+    
+    --card: 94 66% 12%;
+    --card-foreground: var(--pure-white);
+    
+    --popover: 94 66% 12%;
+    --popover-foreground: var(--pure-white);
+    
+    --primary: var(--emerald);
+    --primary-foreground: 94 66% 8%;
+    
+    --secondary: 94 40% 15%;
+    --secondary-foreground: var(--pure-white);
+    
+    --muted: 94 40% 15%;
+    --muted-foreground: 195 7% 70%;
+    
+    --accent: var(--warm-gold);
+    --accent-foreground: 94 66% 8%;
+    
+    --destructive: var(--deep-saffron);
+    --destructive-foreground: var(--pure-white);
+    
+    --border: 94 40% 20%;
+    --input: 94 40% 20%;
+    --ring: var(--emerald);
+    
+    /* Dark theme gradients */
+    --gradient-nature: linear-gradient(135deg, hsl(94 66% 12%), hsl(var(--emerald)));
+    --gradient-wisdom: linear-gradient(135deg, hsl(var(--warm-gold)), hsl(var(--deep-saffron)));
+    --gradient-trust: linear-gradient(135deg, hsl(var(--trust-blue)), hsl(var(--emerald)));
+    
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --shadow-glow: 0 0 0 1px hsl(var(--emerald) / 0.2), 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+    --shadow-premium: 0 0 0 1px hsl(var(--warm-gold) / 0.3), 0 8px 32px -8px hsl(var(--warm-gold) / 0.2);
   }
 }
 
@@ -100,6 +113,25 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
   }
+  
+  /* Custom utility classes for Ayurvedic theme */
+  .text-forest { color: hsl(var(--forest-green)); }
+  .text-emerald { color: hsl(var(--emerald)); }
+  .text-gold { color: hsl(var(--warm-gold)); }
+  .text-saffron { color: hsl(var(--deep-saffron)); }
+  .text-trust { color: hsl(var(--trust-blue)); }
+  .text-earth { color: hsl(var(--earth-brown)); }
+  
+  .bg-forest { background-color: hsl(var(--forest-green)); }
+  .bg-emerald { background-color: hsl(var(--emerald)); }
+  .bg-gold { background-color: hsl(var(--warm-gold)); }
+  .bg-saffron { background-color: hsl(var(--deep-saffron)); }
+  .bg-trust { background-color: hsl(var(--trust-blue)); }
+  .bg-earth { background-color: hsl(var(--earth-brown)); }
+  
+  .border-forest { border-color: hsl(var(--forest-green)); }
+  .border-emerald { border-color: hsl(var(--emerald)); }
+  .border-gold { border-color: hsl(var(--warm-gold)); }
 }

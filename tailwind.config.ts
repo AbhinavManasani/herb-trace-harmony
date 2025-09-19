@@ -47,16 +47,46 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        
+        /* Ayurvedic Theme Colors */
+        forest: {
+          DEFAULT: "hsl(var(--forest-green))",
+          foreground: "hsl(var(--pure-white))",
         },
+        emerald: {
+          DEFAULT: "hsl(var(--emerald))",
+          foreground: "hsl(var(--pure-white))",
+        },
+        gold: {
+          DEFAULT: "hsl(var(--warm-gold))",
+          foreground: "hsl(var(--charcoal-gray))",
+        },
+        saffron: {
+          DEFAULT: "hsl(var(--deep-saffron))",
+          foreground: "hsl(var(--pure-white))",
+        },
+        trust: {
+          DEFAULT: "hsl(var(--trust-blue))",
+          foreground: "hsl(var(--pure-white))",
+        },
+        earth: {
+          DEFAULT: "hsl(var(--earth-brown))",
+          foreground: "hsl(var(--pure-white))",
+        },
+      },
+      backgroundImage: {
+        'gradient-nature': 'var(--gradient-nature)',
+        'gradient-wisdom': 'var(--gradient-wisdom)',
+        'gradient-trust': 'var(--gradient-trust)',
+      },
+      boxShadow: {
+        'soft': 'var(--shadow-soft)',
+        'glow': 'var(--shadow-glow)',
+        'premium': 'var(--shadow-premium)',
+      },
+      transitionTimingFunction: {
+        'smooth': 'var(--transition-smooth)',
+        'spring': 'var(--transition-spring)',
       },
       borderRadius: {
         lg: "var(--radius)",
